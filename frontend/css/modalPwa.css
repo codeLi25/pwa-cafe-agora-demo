@@ -1,6 +1,6 @@
 /* === Banner de instalación PWA === */
 .pwa-banner {
-  position: fixed; /* Cambiado de relative → fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,20 +11,16 @@
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
-  transition: all 0.4s ease-in-out;
-  z-index: 1050; /* encima del header */
+  z-index: 1050;
   font-size: 0.95rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease-in-out;
 }
 
-/* .pwa-banner.hidden {
-  transform: translateY(-100%);
-} */
- /* Oculto inicialmente */
+/* Oculto inicialmente */
 .pwa-banner.hidden {
   display: none;
 }
-
 
 .pwa-banner-content {
   display: flex;
@@ -65,50 +61,44 @@
   cursor: pointer;
 }
 
-/* Empuja el header y el hero hacia abajo el mismo alto que el banner */
+/* === EMPUJE HEADER + HERO CUANDO EL BANNER ESTÁ ACTIVO === */
+
+/* 🔹 Escritorio (mantiene position: fixed) */
 body.banner-visible .header,
 body.banner-visible .hero {
-  transform: translateY(65px); /* 🔹 Altura total del banner (~65px incluyendo padding) */
+  transform: translateY(65px);
   transition: transform 0.4s ease-in-out;
 }
 
-/* Transición suave cuando desaparece */
 .header,
 .hero {
   transition: transform 0.4s ease-in-out;
 }
 
-/* Asegura que el contenido principal no quede tapado */
-main {
-  margin-top: 90px; /* espacio para el header fijo */
-}
-
-/* === FIX PARA MÓVILES === */
+/* 🔹 Móviles: usar margin-top (más estable que transform con fixed) */
 @media (max-width: 768px) {
-  /* Cuando el banner está visible, el header y el hero bajan */
   body.banner-visible .header {
-    position: relative !important;
-    margin-top: 65px !important; /* altura del banner */
-    transform: none !important;
+    position: fixed !important;
+    top: 65px !important; /* desplaza el header hacia abajo */
+    transition: top 0.4s ease-in-out;
   }
 
   body.banner-visible .hero {
     margin-top: 65px !important;
-    transform: none !important;
+    transition: margin-top 0.4s ease-in-out;
   }
 
-  /* Transición suave */
-  .header,
-  .hero {
-    transition: margin-top 0.4s ease-in-out;
+  body:not(.banner-visible) .header {
+    top: 0 !important;
   }
 }
 
-/* En pantallas grandes mantenemos el efecto con transform */
-@media (min-width: 769px) {
-  body.banner-visible .header,
-  body.banner-visible .hero {
-    transform: translateY(65px);
-    transition: transform 0.4s ease-in-out;
-  }
+/* 🔹 Asegura que el contenido principal no quede tapado por el header fijo */
+main {
+  margin-top: 90px; /* espacio para el header */
+}
+
+/* Opcional: agrega sombra al header cuando baja con el banner */
+body.banner-visible .header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
