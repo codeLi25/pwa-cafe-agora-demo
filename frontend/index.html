@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="css/reservaMesa.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Cafe Ágora</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6b4b3e">
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+</head>
+
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logoCoffee.png" alt="Cafe Ágora" height="50" class="me-2">
+        Cafe Ágora
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="#book-a-table">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#footer">Contacto</a></li>
+        </ul>
+
+        <form class="d-flex me-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+          <button class="btn btn-search" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+
+        <div class="nav-actions">
+          <a href="#menu" class="cta-btn">¡Haz tu pedido ya!</a>
+          <a href="/login.html" class="btn-login">Iniciar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Carrito FLOTANTE para TODOS los dispositivos -->
+<a href="#pedido" id="btn-carrito" class="btn-cart-floating">
+  <i class="bi bi-cart-fill"></i>
+  <span id="carrito-contador" class="cart-count-floating">0</span>
+</a>
+
+<body>
+
+  <section class="hero">
+
+    <div class="capa">
+
+    </div>
+    <div class="container">
+      <h1 class="display-1">Bienvenidos a Café Ágora</h1>
+      <p class="lead">
+        En Café Ágora te ofrecemos más que café: puedes <strong>hacer tu pedido online</strong> y recogerlo en el
+        momento que prefieras,
+        o <strong>reservar tu mesa</strong> para celebrar un cumpleaños, disfrutar de una cita especial o simplemente
+        pasar un buen rato.
+        Vive la experiencia Ágora a tu manera, siempre con el mejor sabor y ambiente.
+      </p>
+      <a class="button" href="#menu" role="button">Haz tu pedido</a>
+    </div>
+  </section>
+
+  <section>
+    <div id="contacto" class="about_section layout_padding">
+      <div class="container">
+        <div class="about_section_2">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="about_taital_box">
+                <h1 class="about_taital">Acerca de Nuestra Tienda</h1>
+                <h1 class="about_taital_1">Cafe Ágora</h1>
+
+                <p class=" about_text">Café Ágora es una empresa dedicada a la producción y comercialización de
+                  café de alta calidad, cultivado en las fértiles tierras de la región. Nuestro café es el resultado de
+                  un
+                  proceso artesanal que combina tradición y tecnología para ofrecer un producto con un sabor auténtico y
+                  único.</p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i>Café de alta calidad</li>
+                  <li><i class="bi bi-check2-all"></i>Cultivado en las fértiles tierras</li>
+                  <li><i class="bi bi-check2-all"></i>Proceso artesanal</li>
+                  <li><i class="bi bi-check2-all"></i>Sabor auténtico y único</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="image_iman">
+                <img src="assets/img/portada.jpg" width="100%" class="portadaCoffe">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Menú -->
+  <section id="menu" class="menu section">
+
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Nuestro Menú</h2>
+      <div>Descubre el sabor único de Café Ágora</div>
+    </div>
+
+    <div class="container">
+
+      <!-- Tabs de Categorías -->
+      <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <li class="nav-item">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-cafes">
+            <h4>Cafés</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-postres">
+            <h4>Postres</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-bebidas">
+            <h4>Bebidas Frías</h4>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Contenido -->
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Cafés -->
+        <div class="tab-pane fade active show" id="menu-cafes">
+          <div class="tab-header text-center">
+            <p>Menú</p>
+            <h3>Cafés</h3>
+          </div>
+
+          <div class="menu-grid">
+
+            <div class="menu-item">
+              <img src="assets/img/cafe 2.jpeg" class="menu-img" alt="Café Irlandés">
+              <div class="menu-content">
+                <h4>Café Irlandés</h4>
+                <p class="ingredients">Café, whisky irlandés, azúcar, crema batida.</p>
+                <p class="price">S/ 8.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="assets/img/cafe-capuchino.jpg" class="menu-img" alt="Capuchino">
+              <div class="menu-content">
+                <h4>Capuchino</h4>
+                <p class="ingredients">Espresso, leche espumada, cacao en polvo.</p>
+                <p class="price">S/ 7.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="assets/img/cafedoble.jpg" class="menu-img" alt="Café Doble">
+              <div class="menu-content">
+                <h4>Café Doble</h4>
+                <p class="ingredients">Doble porción de café molido.</p>
+                <p class="price">S/ 5.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Postres -->
+        <div class="tab-pane fade" id="menu-postres">
+          <div class="tab-header text-center">
+            <p>Menú</p>
+            <h3>Postres</h3>
+          </div>
+
+          <div class="menu-grid">
+
+            <div class="menu-item">
+              <img src="assets/img/torta chocolate.jpg" class="menu-img" alt="Torta Chocolate">
+              <div class="menu-content">
+                <h4>Torta de Chocolate</h4>
+                <p class="ingredients">Un toque de dulzura intensa.</p>
+                <p class="price">S/ 5.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="assets/img/torta selva negra.jpg" class="menu-img" alt="Selva Negra">
+              <div class="menu-content">
+                <h4>Torta Selva Negra</h4>
+                <p class="ingredients">Cerezas jugosas y chocolate amargo.</p>
+                <p class="price">S/ 6.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="assets/img/torta de fruta.jpg" class="menu-img" alt="Torta Frutas">
+              <div class="menu-content">
+                <h4>Torta de Frutas</h4>
+                <p class="ingredients">Colores y dulzor natural de frutas.</p>
+                <p class="price">S/ 6.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bebidas Frías -->
+        <div class="tab-pane fade" id="menu-bebidas">
+          <div class="tab-header text-center">
+            <p>Menú</p>
+            <h3>Bebidas Frías</h3>
+          </div>
+
+          <div class="menu-grid">
+
+            <div class="menu-item">
+              <img src="assets/img/frape-coffee.jpg" class="menu-img" alt="Frappé">
+              <div class="menu-content">
+                <h4>Frappé de Café</h4>
+                <p class="ingredients">Café helado, crema batida, jarabe de chocolate.</p>
+                <p class="price">S/ 9.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="assets/img/malteada-vainilla.jpg" class="menu-img" alt="Malteada">
+              <div class="menu-content">
+                <h4>Malteada de Vainilla</h4>
+                <p class="ingredients">Helado de vainilla, leche, crema batida.</p>
+                <p class="price">S/ 10.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="assets/img/malteada-fresa.jpg" class="menu-img" alt="Malteada">
+              <div class="menu-content">
+                <h4>Malteada de Fresa</h4>
+                <p class="ingredients">Helado de Fresa, leche, crema batida.</p>
+                <p class="price">S/ 10.00</p>
+                <button class="btn-add">Agregar al Pedido</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Sección Reserva de Mesa ===== -->
+  <section id="book-a-table" class="book-a-table section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Reservas</h2>
+      <div>Haz tu reserva ahora</div>
+    </div>
+
+    <div class="container">
+      <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Imagen lateral -->
+        <div class="col-lg-4 reservation-img">
+          <img src="assets/img/reservation.jpg" class="img-fluid" alt="Reserva">
+        </div>
+
+        <!-- Formulario -->
+        <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+          <form id="reservation-form" class="reservation-form" onsubmit="return false;">
+
+            <div class="row gy-4">
+              <!-- Teléfono -->
+              <div class="col-lg-4 col-md-6">
+                <input type="tel" name="phone" placeholder="Tu teléfono" pattern="[0-9]{9}" maxlength="9" minlength="9"
+                  title="Debe tener 9 dígitos" required>
+              </div>
+
+              <!-- Fecha -->
+              <div class="col-lg-4 col-md-6">
+                <input type="date" name="date" required>
+              </div>
+
+              <!-- Hora -->
+              <div class="col-lg-4 col-md-6">
+                <select name="time" id="time" required></select>
+              </div>
+
+              <!-- Número de personas -->
+              <div class="col-lg-4 col-md-6">
+                <select name="people" id="people" required></select>
+              </div>
+
+              <!-- Tipo de reserva -->
+              <div class="col-lg-6 col-md-12">
+                <select name="reservation_type" required>
+                  <option value="" disabled selected>Selecciona tipo de reserva</option>
+                  <option value="mesa">Mesa Simple</option>
+                  <option value="cumpleaños">Mesa para Cumpleaños</option>
+                  <option value="cita">Mesa para Cita</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="form-group mt-3">
+              <textarea name="message" rows="4" placeholder="Detalles adicionales"></textarea>
+            </div>
+
+            <!-- Botón -->
+            <div class="text-center mt-3">
+              <button type="submit" class="btn-reservar">Reservar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script para generar horarios -->
+  <script>
+    const select = document.getElementById('time');
+    for (let h = 8; h <= 21; h++) {
+      const hour = h.toString().padStart(2, '0') + ":00";
+      const option = document.createElement("option");
+      option.value = hour;
+      option.textContent = hour;
+      select.appendChild(option);
+    }
+
+    // Select de número de personas
+    const selectPeople = document.getElementById('people');
+    for (let i = 1; i <= 12; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i === 1 ? "1 persona" : `${i} personas`;
+      selectPeople.appendChild(option);
+    }
+  </script>
+
+
+  <div id="carrito-panel" class="carrito-panel">
+
+    <button id="cerrar-carrito" class="btn-cerrar">&times;</button>
+
+    <h3>Tu Pedido</h3>
+    <ul id="carrito-lista"></ul>
+
+    <div class="carrito-footer">
+      <strong>Total:</strong>
+      <span id="carrito-total">S/ 0.00</span>
+    </div>
+
+    <button id="btn-continuar" class="btn-pedido">Seguir con el pedido</button>
+
+  </div>
+
+  <!-- Modal de Checkout -->
+  <div id="checkout-modal" class="modal" aria-hidden="true">
+    <div class="modal-contenido" role="dialog" aria-modal="true">
+      <button id="cerrar-modal" class="cerrar-modal" aria-label="Cerrar">&times;</button>
+      <h2>Completar Pedido</h2>
+
+      <form id="checkout-form" autocomplete="off">
+        <div class="checkout-grid">
+          <!-- Columna izquierda: Datos del cliente -->
+          <div class="col-left">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required class="input-style">
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" maxlength="9" placeholder="9 dígitos" required
+              class="input-style">
+
+            <label for="fecha-recogida">Fecha de Recogida</label>
+            <input type="date" id="fecha-recogida" name="fecha-recogida" required class="input-style">
+
+            <label for="hora-recogida">Hora de Recogida</label>
+            <select id="hora-recogida" name="hora-recogida" required class="input-style"></select>
+          </div>
+
+          <!-- Columna derecha: Método de pago -->
+          <div class="col-right">
+            <label for="metodo-pago">Método de Pago</label>
+            <select id="metodo-pago" name="metodo-pago" required class="input-style">
+              <option value="">Selecciona un método</option>
+              <option value="tarjeta">Tarjeta</option>
+              <option value="yape">Yape / Plin</option>
+            </select>
+
+            <!-- Contenedor dinámico para campos según método -->
+            <div id="payment-details"></div>
+          </div>
+        </div>
+
+        <!-- Resumen: total -->
+        <div class="checkout-resumen">
+          <span>Subtotal:</span>
+          <strong id="checkout-subtotal">S/ 0.00</strong>
+        </div>
+
+        <div class="checkout-actions">
+          <button type="submit" class="btn-confirmar">Simular Pago y Confirmar</button>
+        </div>
+
+        <div id="checkout-loading" class="checkout-loading" style="display:none;">Procesando pago...</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botón de WhatsApp -->
+  <!-- <a href="https://wa.me/51950749172" target="_blank" id="btn-whatsapp" class="btn-whatsapp">
+    <img src="assets/img/whatsapp.png" alt="WhatsApp" />
+  </a>
+  -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"> </script>
+
+  <script src="js/carrito.js"></script>
+  <script src="js/autenticacion.js"></script>
+  <script src="js/horarioPedidos.js"></script>
+  <script src="js/modoOscuro.js"></script>
+  <script src="js/formularioPedido.js"></script>
+  <script src="js/reservaMesa.js"></script>
+
+
+</body>
+
+<footer id="footer" class="footer dark-background">
+
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div class="address">
+          <h4>Direción</h4>
+          <p> Jiron Buenos Aires N°450</p>
+          <p> Huancayo, Perú</p>
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4>Contacto</h4>
+          <p>
+            <strong>Telefono:</strong> <span>+51 950749175</span><br>
+            <strong>Correo:</strong> <span>CafeÁgora@gmail.com</span><br>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+          <h4>Horas abiertas</h4>
+          <p>
+            <strong>Lunes-Domingo:</strong> <span>8am - 9pm</span><br>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h4>Siganos en nuestras Redes</h4>
+        <div class="social-links d-flex">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Cafe Ágora</strong> <span>Reservados todos lo
+        derechos</span></p>
+    <div class="credits">
+      Designed by J.A.</a>
+    </div>
+  </div>
+</footer>
+
+
+
+</html>

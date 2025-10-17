@@ -1,0 +1,337 @@
+:root {
+    --background-color: #ffffff;
+    --default-color: #212529;
+    --heading-color: #37373f;
+    --accent-color: #bb9656;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+
+}
+
+.header {
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    background: transparent;
+    /* ✅ CAMBIA ESTO */
+    backdrop-filter: none;
+    /* ✅ QUITA EL BLUR */
+}
+
+/*SECCION NAV */
+.navbar {
+    background: #cda45e;
+    width: 90%;
+    margin: auto;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-family: "Baskervville SC", serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link {
+    position: relative;
+    font-size: 1.05rem;
+    color: #0e0900;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #4a2f18;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #4a2f18;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Buscador */
+.navbar .form-control {
+    border: none;
+    outline: none;
+    background-color: #bb9656;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.navbar .form-control::placeholder {
+    color: #f3e6d6;
+}
+
+.btn-search {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+.btn-search:hover {
+    color: #2c1a00;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.btn-login {
+    padding: 8px 22px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.btn-login:hover {
+    background: #fff;
+    color: #2c1a00;
+}
+
+/* Botón pedido */
+.cta-btn {
+    padding: 8px 22px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #4a2f18;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.cta-btn:hover {
+    background: #2c1a0d;
+    border: 2px solid #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== CARRITO FLOTANTE PARA TODOS ===== */
+.btn-cart-floating {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 65px;
+    height: 65px;
+    background: #4a2f18;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1040;
+    transition: all 0.3s ease;
+    border: 2px solid #cda45e;
+}
+
+.btn-cart-floating:hover {
+    background: #2c1a0d;
+    transform: scale(1.1);
+    color: #fff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+.cart-count-floating {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    min-width: 22px;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+}
+
+/* ======== RESPONSIVE NAVBAR ======== */
+@media (max-width: 768px) {
+
+
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .navbar {
+        border-radius: 0;
+        padding: 0.8rem 1rem;
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar-brand img {
+        display: inline-block;
+        height: 50px;
+
+        width: auto;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        color: #000;
+        margin: 0;
+    }
+
+    /* 🔹 Hamburguesa SIEMPRE VISIBLE */
+    .navbar-toggler {
+        display: block !important;
+        border: none;
+        padding: 4px 8px;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    /* 🔹 Menú colapsado */
+    .navbar-collapse {
+        background: #cda45e;
+        border-radius: 0 0 12px 12px;
+        margin-top: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* 🔹 Links en columna */
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 12px;
+        display: block;
+        border-radius: 8px;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 🔹 Buscador en columna */
+    form.d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .navbar .form-control {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 🔹 Botones en columna */
+    .nav-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .cta-btn,
+    .btn-login {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* 🔹 Ajustar carrito flotante para móvil */
+    .btn-cart-floating {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .navbar {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .btn-cart-floating {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+/* Solo pantallas grandes */
+@media (min-width: 769px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
+/* Asegurar que el carrito esté siempre visible */
+.btn-cart-floating {
+    display: flex !important;
+}

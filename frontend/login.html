@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Cafe Agora</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.png">
+    <link rel="stylesheet" href="css/login-register.css">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6b4b3e">
+</head>
+
+<body>
+    <div class="auth-container">
+        <form id="loginForm" class="auth-form">
+            <h2>Iniciar sesión</h2>
+
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+
+            <button type="submit">Entrar</button>
+
+            <p class="switch">
+                ¿No tienes cuenta? <a href="register.html">Regístrate</a>
+            </p>
+        </form>
+
+        <!-- Spinner de carga -->
+        <div id="spinner" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+
+    </div>
+</body>
+<script src="js/login.js"></script>
+
+</html>

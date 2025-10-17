@@ -1,0 +1,200 @@
+/* ==== Fondo general ==== */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/img/loginFondo.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+/* Overlay oscuro para mejorar contraste */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+/* ==== Contenedor del formulario ==== */
+.auth-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.9s ease;
+  margin: 20px; /* margen en pantallas pequeñas */
+}
+
+/* ==== Formulario ==== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f5f2eb;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* ==== Inputs ==== */
+.auth-form input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.auth-form input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.auth-form input:focus {
+  border-color: #d4af37;
+  background: rgba(255,255,255,0.25);
+  outline: none;
+  box-shadow: 0 0 8px rgba(212,175,55,0.6);
+}
+
+/* ==== Botón ==== */
+.auth-form button {
+  background: linear-gradient(135deg, #d4af37, #bb9656);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.auth-form button:hover {
+  background: linear-gradient(135deg, #bb9656, #a67c00);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+/* ==== Cambiar entre login/register ==== */
+.switch {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #f5f2eb;
+}
+
+.switch a {
+  color: #d4af37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* ==== Animaciones ==== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== Responsividad ==== */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .auth-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-form input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .auth-form button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 25px 18px;
+    border-radius: 12px;
+  }
+
+  .auth-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .auth-form input {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .auth-form button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .switch {
+    font-size: 12px;
+  }
+}
+
+#spinner {
+  display: none; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 8px solid #cc8304; 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+

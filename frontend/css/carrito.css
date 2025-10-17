@@ -1,0 +1,301 @@
+/* ===== CARRO / PANEL ===== */
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    max-width: 90%;
+    height: 100%;
+    background: #fdf6ec; /* color consistente */
+    box-shadow: -2px 0 15px rgba(0,0,0,0.25);
+    padding: 1rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* scroll si hay muchos items */
+}
+
+.carrito-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.carrito-panel::-webkit-scrollbar-thumb {
+    background-color: #d4a373;
+    border-radius: 6px;
+}
+
+.carrito-panel h3 {
+    color: #5a3825; 
+    font-size: 1.4rem;
+    border-bottom: 2px solid #d4a373;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.carrito-panel.open {
+    right: 0;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.carrito-item .acciones {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.carrito-item button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #e0c097;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.carrito-item button:hover {
+    background: #d4a373;
+}
+
+.carrito-item .eliminar {
+    background: #c44536; 
+    color: white;
+}
+
+.carrito-item .eliminar:hover {
+    background: #8b2c1d;
+}
+
+.carrito-footer {
+    margin-top: auto;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: #5a3825;
+    font-weight: bold;
+}
+
+#carrito-contador {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 22px;
+    height: 22px;
+    background-color: #f6270f;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* ===== BOTONES ===== */
+.btn-pedido {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #6f4e37; 
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.btn-pedido:hover {
+    background: #563727; 
+    transform: scale(1.03);
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a3825; 
+    cursor: pointer;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.btn-cerrar:hover {
+    color: #c44536; 
+    transform: scale(1.2);
+}
+
+/* ===== MODAL PEDIDO ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2200;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto; /* scroll si es necesario */
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-contenido {
+    width: 100%;
+    max-width: 620px;
+    background: #fdf6ec; /* mismo color que el panel */
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+    position: relative;
+    transition: all 0.3s ease;
+    max-height: 90vh; /* limita altura y permite scroll interno */
+    overflow-y: auto;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 4px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    color: #5a3825;
+    transition: all 0.3s ease;
+}
+.cerrar-modal:hover {
+    transform: rotate(90deg);
+    background: #e6d3c1;
+}
+
+.modal-contenido h2 {
+    text-align: center;
+    color: #5a3825; 
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+/* Grid de dos columnas */
+.checkout-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.col-left, .col-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Inputs estilizados */
+.input-style {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+.input-style:focus {
+    outline: none;
+    border-color: #d4a373;
+    box-shadow: 0 0 6px rgba(212,163,115,0.5);
+}
+.input-style::placeholder {
+    color: #a58a74;
+    font-style: italic;
+}
+
+/* Resumen */
+.checkout-resumen {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #5a3825;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 1.05rem;
+}
+
+/* Botón confirmar */
+.btn-confirmar {
+    width: 100%;
+    background: linear-gradient(45deg,#6f4e37,#b68b5b);
+    color: #fff;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+.btn-confirmar:hover {
+    background: linear-gradient(45deg,#b68b5b,#6f4e37);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+/* Loader */
+.checkout-loading {
+    margin-top: 12px;
+    text-align: center;
+    color: #5a3825;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width:620px) {
+    .modal-contenido { padding:20px; }
+    .checkout-grid { flex-direction: column; gap:16px; }
+}
+
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.toast-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
