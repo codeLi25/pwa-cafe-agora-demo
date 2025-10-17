@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sin conexión</title>
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/offline.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <a class="navbar-brand" href="/">Café Ágora</a>
+      <div class="nav-actions">
+        <a class="btn-login" href="/">Inicio</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO OFFLINE -->
+  <main class="offline-content">
+    <div class="offline-icon">🔌</div>
+    <h1>No hay conexión a Internet</h1>
+    <p>Parece que no estás conectado. Por favor, revisa tu conexión y vuelve a intentarlo.</p>
+    <button class="retry-btn" onclick="window.location.reload();">Reintentar</button>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Café Ágora. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f7f4f0;
+  margin: 0;
+  padding-top: 80px; /* espacio para el navbar */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.offline-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.offline-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  color: #bb9656;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.3; }
+}
+
+.offline-content h1 {
+  font-size: 2rem;
+  color: #4a2f18;
+  margin-bottom: 1rem;
+}
+
+.offline-content p {
+  font-size: 1.1rem;
+  color: #6b4e2a;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #bb9656, #d4af37);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.retry-btn:hover {
+  background: linear-gradient(135deg, #d4af37, #bb9656);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Footer fijo al final */
+.footer {
+  margin-top: auto;
+  background-color: #1e160d;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
