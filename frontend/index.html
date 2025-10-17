@@ -36,6 +36,12 @@
       });
     }
   </script>
+  <!-- Redirección offline -->
+  <script>
+    if (!navigator.onLine) {
+      window.location.href = "/offline.html";
+    }
+  </script>
 </head>
 
 <header class="header">
