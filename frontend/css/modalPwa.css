@@ -1,0 +1,84 @@
+/* === Banner de instalación PWA === */
+.pwa-banner {
+  position: fixed; /* Cambiado de relative → fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #5a3b2e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  transition: all 0.4s ease-in-out;
+  z-index: 1050; /* encima del header */
+  font-size: 0.95rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* .pwa-banner.hidden {
+  transform: translateY(-100%);
+} */
+ /* Oculto inicialmente */
+.pwa-banner.hidden {
+  display: none;
+}
+
+
+.pwa-banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 600px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pwa-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-install {
+  background-color: #f1c40f;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-install:hover {
+  background-color: #ffda47;
+}
+
+.btn-close-banner {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Empuja el header y el hero hacia abajo el mismo alto que el banner */
+body.banner-visible .header,
+body.banner-visible .hero {
+  transform: translateY(65px); /* 🔹 Altura total del banner (~65px incluyendo padding) */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Transición suave cuando desaparece */
+.header,
+.hero {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Asegura que el contenido principal no quede tapado */
+main {
+  margin-top: 90px; /* espacio para el header fijo */
+}

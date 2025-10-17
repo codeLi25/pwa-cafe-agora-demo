@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/carrito.css">
   <link rel="stylesheet" href="css/reservaMesa.css">
+  <link rel="stylesheet" href="css/modalPwa.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -29,7 +30,9 @@
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("service-worker.js");
+        navigator.serviceWorker.register("service-worker.js")
+          .then(() => console.log(" Service Worker registrado"))
+          .catch(err => console.error(" Error SW:", err));
       });
     }
   </script>
@@ -77,6 +80,17 @@
   <i class="bi bi-cart-fill"></i>
   <span id="carrito-contador" class="cart-count-floating">0</span>
 </a>
+
+<!-- 🔽 Banner de instalación PWA -->
+<div id="pwa-install-banner" class="pwa-banner hidden">
+  <div class="pwa-banner-content">
+    <span>¿Quieres instalar <strong>Café Ágora</strong> en tu dispositivo?</span>
+    <div class="pwa-buttons">
+      <button id="btn-install" class="btn-install">Instalar</button>
+      <button id="btn-close-banner" class="btn-close-banner">✕</button>
+    </div>
+  </div>
+</div>
 
 <body>
 
@@ -467,6 +481,7 @@
   <script src="js/modoOscuro.js"></script>
   <script src="js/formularioPedido.js"></script>
   <script src="js/reservaMesa.js"></script>
+  <script src="js/pwa-install.js"></script>
 
 
 </body>
