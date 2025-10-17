@@ -1,4 +1,4 @@
-/* ===== RESET SIMPLE ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -15,19 +15,19 @@ body {
   min-height: 100vh;
 }
 
-/* ===== NAVBAR ===== */
-.header {
+/* ===== NAVBAR OFFLINE ===== */
+.offline-header {
   background-color: #6b4b3e;
   padding: 1rem 2rem;
 }
 
-.navbar {
+.offline-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar-brand {
+.offline-brand {
   display: flex;
   align-items: center;
   color: white;
@@ -36,13 +36,13 @@ body {
   font-size: 1.2rem;
 }
 
-.navbar-brand .logo {
+.offline-logo {
   width: 40px;
   height: 40px;
   margin-right: 0.5rem;
 }
 
-.nav-actions .btn-login {
+.offline-actions .offline-btn-home {
   background-color: #f0c27b;
   color: #6b4b3e;
   padding: 0.5rem 1rem;
@@ -52,12 +52,12 @@ body {
   transition: 0.3s;
 }
 
-.nav-actions .btn-login:hover {
+.offline-actions .offline-btn-home:hover {
   background-color: #e0b36a;
 }
 
 /* ===== CONTENIDO OFFLINE ===== */
-.offline-content {
+.offline-main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ body {
   padding: 2rem;
 }
 
-.offline-img {
+.offline-main-logo {
   max-width: 200px;
   width: 50%;
   height: auto;
@@ -79,18 +79,18 @@ body {
   margin-bottom: 1rem;
 }
 
-.offline-content h1 {
+.offline-title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-.offline-content p {
+.offline-text {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   color: #555;
 }
 
-.retry-btn {
+.offline-retry-btn {
   padding: 0.6rem 1.2rem;
   background-color: #6b4b3e;
   color: #fff;
@@ -101,12 +101,12 @@ body {
   transition: 0.3s;
 }
 
-.retry-btn:hover {
+.offline-retry-btn:hover {
   background-color: #533729;
 }
 
-/* ===== FOOTER ===== */
-.footer {
+/* ===== FOOTER OFFLINE ===== */
+.offline-footer {
   background-color: #6b4b3e;
   color: white;
   text-align: center;
@@ -116,15 +116,13 @@ body {
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 600px) {
-  .offline-content h1 {
+  .offline-main-logo {
+    max-width: 150px;
+  }
+  .offline-title {
     font-size: 1.5rem;
   }
-
-  .offline-content p {
+  .offline-text {
     font-size: 0.9rem;
-  }
-
-  .offline-img {
-    max-width: 150px;
   }
 }
