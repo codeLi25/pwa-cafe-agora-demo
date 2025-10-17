@@ -17,7 +17,6 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* Oculto inicialmente */
 .pwa-banner.hidden {
   display: none;
 }
@@ -61,44 +60,32 @@
   cursor: pointer;
 }
 
-/* === EMPUJE HEADER + HERO CUANDO EL BANNER ESTÁ ACTIVO === */
-
-/* 🔹 Escritorio (mantiene position: fixed) */
+/* ✅ Empuje dinámico basado en variable CSS --banner-height */
 body.banner-visible .header,
 body.banner-visible .hero {
-  transform: translateY(65px);
-  transition: transform 0.4s ease-in-out;
+  transform: translateY(var(--banner-height, 0px));
+  transition: transform 0.3s ease-in-out;
 }
 
 .header,
 .hero {
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* 🔹 Móviles: usar margin-top (más estable que transform con fixed) */
+/* 🔹 En móviles: usar top/margin dinámico */
 @media (max-width: 768px) {
   body.banner-visible .header {
     position: fixed !important;
-    top: 65px !important; /* desplaza el header hacia abajo */
-    transition: top 0.4s ease-in-out;
+    top: var(--banner-height, 0px) !important;
+    transition: top 0.3s ease-in-out;
   }
 
   body.banner-visible .hero {
-    margin-top: 65px !important;
-    transition: margin-top 0.4s ease-in-out;
-  }
-
-  body:not(.banner-visible) .header {
-    top: 0 !important;
+    margin-top: var(--banner-height, 0px) !important;
+    transition: margin-top 0.3s ease-in-out;
   }
 }
 
-/* 🔹 Asegura que el contenido principal no quede tapado por el header fijo */
 main {
-  margin-top: 90px; /* espacio para el header */
-}
-
-/* Opcional: agrega sombra al header cuando baja con el banner */
-body.banner-visible .header {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-top: 90px;
 }
