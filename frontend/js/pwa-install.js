@@ -3,14 +3,16 @@ const banner = document.getElementById("pwa-install-banner");
 const installBtn = document.getElementById("btn-install");
 const closeBtn = document.getElementById("btn-close-banner");
 
-// Mostrar el banner cuando el evento esté disponible
+// Capturar el evento antes de que se muestre el banner
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
-  // 🔹 Mostrar siempre el banner
-  banner.classList.remove("hidden");
-  document.body.classList.add("banner-visible");
+  // Mostrar el banner solo si hay conexión
+  if (navigator.onLine) {
+    banner.classList.remove("hidden");
+    document.body.classList.add("banner-visible");
+  }
 });
 
 // Botón "Instalar"
@@ -31,11 +33,16 @@ installBtn.addEventListener("click", async () => {
   deferredPrompt = null;
 });
 
-// Botón "Cerrar"
+// Botón "Cerrar" del banner
 closeBtn.addEventListener("click", () => {
   banner.classList.add("hidden");
   document.body.classList.remove("banner-visible");
-  // ❌ Ya no usamos localStorage
 });
 
-
+// Opcional: si el usuario recupera conexión, volver a mostrar el banner
+window.addEventListener("online", () => {
+  if (deferredPrompt) {
+    banner.classList.remove("hidden");
+    document.body.classList.add("banner-visible");
+  }
+});

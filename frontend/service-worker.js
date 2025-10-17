@@ -1,22 +1,18 @@
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("cafe-agora-cache-v1").then((cache) => {
+      // Solo cacheamos lo necesario para mostrar la página offline
       return cache.addAll([
-        "/",
-        "/index.html",
-        "/login.html",
         "/offline.html",
-        "/css/nav.css",
         "/css/offline.css",
-        "/js/pwa-install.js",
-        "/manifest.json",
+        "/css/nav.css",
         "/assets/icon-192x192.png",
         "/assets/icon-512x512.png",
         "/assets/img/logoCoffee.png"
       ]);
     })
   );
-  console.log("✅ Service Worker instalado (Café Ágora)");
+  console.log("✅ Service Worker instalado (offline solo)");
 });
 
 // Network First: intenta cargar de la red primero
