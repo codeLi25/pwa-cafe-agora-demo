@@ -82,3 +82,33 @@ body.banner-visible .hero {
 main {
   margin-top: 90px; /* espacio para el header fijo */
 }
+
+/* === FIX PARA MÓVILES === */
+@media (max-width: 768px) {
+  /* Cuando el banner está visible, el header y el hero bajan */
+  body.banner-visible .header {
+    position: relative !important;
+    margin-top: 65px !important; /* altura del banner */
+    transform: none !important;
+  }
+
+  body.banner-visible .hero {
+    margin-top: 65px !important;
+    transform: none !important;
+  }
+
+  /* Transición suave */
+  .header,
+  .hero {
+    transition: margin-top 0.4s ease-in-out;
+  }
+}
+
+/* En pantallas grandes mantenemos el efecto con transform */
+@media (min-width: 769px) {
+  body.banner-visible .header,
+  body.banner-visible .hero {
+    transform: translateY(65px);
+    transition: transform 0.4s ease-in-out;
+  }
+}
