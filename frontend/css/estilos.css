@@ -581,3 +581,9 @@ img {
     width: auto;
   }
 }
+
+@media (max-width: 767px) {
+  .hero .container p {
+    display: none;
+  }
+}

@@ -81,6 +81,18 @@
   </nav>
 </header>
 
+<script>
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener("click", () => {
+      const navbar = document.getElementById("navbarSupportedContent");
+      const bsCollapse = new bootstrap.Collapse(navbar, {
+        toggle: false
+      });
+      bsCollapse.hide(); // ✅ Cerrar menú al hacer clic
+    });
+  });
+</script>
+
 <!-- Carrito FLOTANTE para TODOS los dispositivos -->
 <a href="#pedido" id="btn-carrito" class="btn-cart-floating">
   <i class="bi bi-cart-fill"></i>
