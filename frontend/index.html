@@ -82,13 +82,13 @@
 </header>
 
 <script>
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.nav-link, .cta-btn').forEach(link => {
     link.addEventListener("click", () => {
       const navbar = document.getElementById("navbarSupportedContent");
       const bsCollapse = new bootstrap.Collapse(navbar, {
         toggle: false
       });
-      bsCollapse.hide(); // ✅ Cerrar menú al hacer clic
+      bsCollapse.hide(); // ✅ Cierra el menú hamburguesa
     });
   });
 </script>
